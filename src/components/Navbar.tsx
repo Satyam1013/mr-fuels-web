@@ -80,7 +80,7 @@ export default function Navbar() {
               Pricing
             </a>
             <a
-              href="#"
+              href="#contact"
               onClick={() => setIsOpen(false)}
               className="text-xl text-zinc-300 hover:text-white"
             >

@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Trial Plan",
+    "duration": "1 Month",
+    "price": "Free",
+    "originalPrice": null,
+    "description": "Perfect for exploring the platform and testing our features.",
+    "features": [
+      "All Core Features",
+      "1 Fuel Station",
+      "Daily Reports",
+      "Email Support"
+    ],
+    "buttonText": "Start Free Trial",
+    "highlight": false
+  },
+  {
+    "name": "Pro Plan",
+    "duration": "3 Months",
+    "price": "₹999",
+    "originalPrice": "₹1,199",
+    "description": "Ideal for small stations looking to digitize their operations.",
+    "features": [
+      "All Trial Features",
+      "Priority Support",
+      "Expense Analytics",
+      "Export to PDF/Excel"
+    ],
+    "buttonText": "Get Pro Now",
+    "highlight": true
+  },
+  {
+    "name": "Premium Plan",
+    "duration": "1 Year",
+    "price": "₹3,999",
+    "originalPrice": "₹4,999",
+    "description": "Best value for established businesses seeking long-term growth.",
+    "features": [
+      "Everything in Pro",
+      "Multi-user Access",
+      "Advanced Inventory Tracking",
+      "24/7 Dedicated Support"
+    ],
+    "buttonText": "Get Premium",
+    "highlight": false
+  }
+]

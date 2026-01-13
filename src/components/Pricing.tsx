@@ -1,54 +1,5 @@
 import { Check } from "lucide-react";
-
-const plans = [
-  {
-    name: "Trial Plan",
-    duration: "1 Month",
-    price: "Free",
-    originalPrice: null,
-    description: "Perfect for exploring the platform and testing our features.",
-    features: [
-      "All Core Features",
-      "1 Fuel Station",
-      "Daily Reports",
-      "Email Support",
-    ],
-    buttonText: "Start Free Trial",
-    highlight: false,
-  },
-  {
-    name: "Pro Plan",
-    duration: "3 Months",
-    price: "₹999",
-    originalPrice: "₹1,199",
-    description:
-      "Ideal for small stations looking to digitize their operations.",
-    features: [
-      "All Trial Features",
-      "Priority Support",
-      "Expense Analytics",
-      "Export to PDF/Excel",
-    ],
-    buttonText: "Get Pro Now",
-    highlight: true, // This will make the card pop
-  },
-  {
-    name: "Premium Plan",
-    duration: "1 Year",
-    price: "₹3,999",
-    originalPrice: "₹4,999",
-    description:
-      "Best value for established businesses seeking long-term growth.",
-    features: [
-      "Everything in Pro",
-      "Multi-user Access",
-      "Advanced Inventory Tracking",
-      "24/7 Dedicated Support",
-    ],
-    buttonText: "Get Premium",
-    highlight: false,
-  },
-];
+import plans from "../data/pricing.json";
 
 export default function Pricing() {
   return (
@@ -69,10 +20,10 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative flex flex-col p-8 rounded-3xl border ${
+              className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 ${
                 plan.highlight
-                  ? "border-green-600 shadow-xl scale-105 z-10 bg-green-50/30"
-                  : "border-gray-200 bg-white"
+                  ? "border-green-600 shadow-xl md:scale-105 z-10 bg-green-50/30"
+                  : "border-gray-200 bg-white hover:border-gray-300"
               }`}
             >
               {plan.highlight && (
@@ -114,7 +65,7 @@ export default function Pricing() {
               <button
                 className={`w-full py-4 rounded-full font-bold transition-all ${
                   plan.highlight
-                    ? "bg-green-600 text-white hover:bg-green-700"
+                    ? "bg-green-600 text-white hover:bg-green-700 shadow-lg shadow-green-200"
                     : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                 }`}
               >
