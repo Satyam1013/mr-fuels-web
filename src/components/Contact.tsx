@@ -5,7 +5,6 @@ export default function Contact() {
     <section id="contact" className="py-24 px-6 bg-gray-50">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left Side: Contact Info */}
           <div>
             <h2 className="text-4xl font-bold text-gray-900">
               Get in <span className="text-green-600">Touch</span>
@@ -47,14 +46,13 @@ export default function Contact() {
                 <div>
                   <p className="text-sm font-medium text-gray-500">Visit us</p>
                   <p className="text-lg font-semibold text-gray-900">
-                    Fuel Plaza, Sector 62, Noida, UP
+                    Fuel Plaza, Sector 62, Nagpur, MH
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side: Contact Form */}
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -10,7 +10,6 @@ export default function Home() {
       <Navbar />
       <div className="pt-20">
         {" "}
-        {/* This pushes the content down so the navbar doesn't cover it */}
         <Hero />
         <Features />
         <Pricing />

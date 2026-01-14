@@ -6,10 +6,10 @@
     "originalPrice": null,
     "description": "Perfect for exploring the platform and testing our features.",
     "features": [
-      "All Core Features",
-      "1 Fuel Station",
-      "Daily Reports",
-      "Email Support"
+      "Basic Dashboard Access",
+      "Staff Management",
+      "Attendance Tracking",
+      "Standard Reports"
     ],
     "buttonText": "Start Free Trial",
     "highlight": false
@@ -21,10 +21,10 @@
     "originalPrice": "₹1,199",
     "description": "Ideal for small stations looking to digitize their operations.",
     "features": [
-      "All Trial Features",
-      "Priority Support",
-      "Expense Analytics",
-      "Export to PDF/Excel"
+      "Basic Dashboard Access",
+      "Staff Management",
+      "Attendance Tracking",
+      "Standard Reports"
     ],
     "buttonText": "Get Pro Now",
     "highlight": true
@@ -37,9 +37,10 @@
     "description": "Best value for established businesses seeking long-term growth.",
     "features": [
       "Everything in Pro",
-      "Multi-user Access",
-      "Advanced Inventory Tracking",
-      "24/7 Dedicated Support"
+      "Advanced Reports",
+      "AI Insights",
+      "Priority Support",
+      "Data Export"
     ],
     "buttonText": "Get Premium",
     "highlight": false
