@@ -12,9 +12,9 @@ export default function Hero() {
     offset: ["start start", "end end"],
   });
 
-  // Scale: Thoda chota (0.7) se full (1)
+  // Scale: 0.75 se 1 tak expand hoga
   const scale = useTransform(scrollYProgress, [0, 0.4], [0.75, 1]);
-  // Rotate: 20 degree tilt se 0 (flat)
+  // Rotate: 20 degree tilt se flat
   const rotateX = useTransform(scrollYProgress, [0, 0.4], [20, 0]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
 
@@ -23,9 +23,10 @@ export default function Hero() {
       ref={containerRef}
       className="relative flex flex-col items-center pt-32 md:pt-48 bg-[#fafafa] min-h-[160vh] overflow-x-hidden"
     >
+      {/* Background Soft Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[600px] bg-gradient-to-b from-green-100/40 to-blue-50/20 blur-[120px] -z-0 rounded-full pointer-events-none" />
 
-      {/* Hero Text */}
+      {/* Hero Text Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -44,13 +45,13 @@ export default function Hero() {
           MR Fuels Transact helps you track sales, tanks, machines, staff, and
           daily reports — all in one powerful platform.
         </p>
-        <button className="mt-10 rounded-full bg-zinc-950 text-white px-10 py-4 font-medium text-lg shadow-xl">
+
+        <button className="mt-10 rounded-full bg-zinc-950 text-white px-10 py-4 font-medium text-lg shadow-xl hover:bg-zinc-800 transition-colors">
           Get Started Free
         </button>
       </motion.div>
 
-      {/* --- Sticky Container for Image --- */}
-      {/* perspective-1000 and overflow-visible is key here */}
+      {/* --- Plain Image Container (No Borders) --- */}
       <div className="sticky top-24 w-full flex justify-center perspective-[2000px] z-20 overflow-visible">
         <motion.div
           style={{
@@ -61,25 +62,24 @@ export default function Hero() {
           }}
           className="w-full max-w-6xl px-4 md:px-0 origin-top flex justify-center"
         >
-          <div className="relative rounded-[1.5rem] md:rounded-[2.5rem] p-1 md:p-2 bg-gradient-to-b from-white to-gray-200/50 backdrop-blur-md border border-white/40 shadow-2xl overflow-hidden">
-            <div className="relative rounded-[1.2rem] md:rounded-[2.2rem] overflow-hidden border border-gray-200 bg-white">
-              <Image
-                src="/hero.JPEG"
-                alt="Dashboard Preview"
-                width={1400}
-                height={900}
-                className="w-full h-auto object-cover"
-                priority
-              />
-            </div>
+          {/* Image Wrapper: Rounded corners preserved but borders/padding removed */}
+          <div className="relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
+            <Image
+              src="/hero.JPEG"
+              alt="Dashboard Preview"
+              width={1400}
+              height={900}
+              className="w-full h-auto object-cover"
+              priority
+            />
           </div>
 
-          {/* Subtle Glow behind the expanding box */}
-          <div className="absolute -inset-10 bg-green-400/5 blur-[100px] -z-10" />
+          {/* Subtle Glow behind the image to give it depth without a solid border */}
+          <div className="absolute -inset-10 bg-gradient-to-r from-green-400/10 to-blue-400/10 blur-[100px] -z-10 opacity-50" />
         </motion.div>
       </div>
 
-      {/* Spacing for scroll logic */}
+      {/* Extra space for scroll trigger */}
       <div className="h-[40vh]" />
     </section>
   );
