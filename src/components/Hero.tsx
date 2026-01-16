@@ -15,7 +15,7 @@ export default function Hero() {
   // Scale: 0.75 se 1 tak expand hoga
   const scale = useTransform(scrollYProgress, [0, 0.4], [0.65, 1]);
   // Rotate: 20 degree tilt se flat
-  const rotateX = useTransform(scrollYProgress, [0, 0.4], [10, 0]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.4], [30, 0]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0.2, 1]);
 
   return (
