@@ -10,90 +10,94 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
+    // Top-4 se humne isse floating banaya hai
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out w-[95%] max-w-5xl 
+      ${
         isScrolled || isOpen
-          ? "bg-black/95 backdrop-blur-md border-b border-zinc-800"
-          : "bg-gradient-to-b from-black/80 to-transparent"
+          ? "bg-white/80 backdrop-blur-xl border border-gray-200/50 shadow-lg py-2 rounded-full"
+          : "bg-transparent py-4 rounded-none"
       }`}
     >
-      <div className="flex items-center justify-between px-6 md:px-10 py-5 max-w-7xl mx-auto">
+      <div className="flex items-center justify-between px-6 md:px-8">
         {/* Logo Section */}
-        <Link
-          href="/"
-          className="flex items-center transition-transform hover:scale-105"
-        >
+        <Link href="#hero" className="flex items-center">
           <Image
-            src="/logo.svg"
+            src="/logo2.png"
             alt="MR Fuels Logo"
-            width={180}
-            height={60}
-            className="h-10 md:h-14 w-auto object-contain"
+            width={140}
+            height={40}
+            unoptimized // Isse Next.js image ko modify nahi karega
+            className="h-8 md:h-10 w-auto object-contain"
             priority
           />
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8 text-sm font-medium items-center text-white">
-          <a href="#features" className="hover:text-green-500 transition">
-            Features
-          </a>
-          <a href="#pricing" className="hover:text-green-500 transition">
-            Pricing
-          </a>
-          <a href="#contact" className="hover:text-green-500 transition">
+        {/* Desktop Links (Centered in the floating bar) */}
+        <div className="hidden md:flex space-x-10 text-[15px] font-medium items-center text-gray-600">
+          <Link href="#features" className="hover:text-black transition-colors">
+            Overview
+          </Link>
+          <Link href="#pricing" className="hover:text-black transition-colors">
+            Plans
+          </Link>
+          <Link href="#contact" className="hover:text-black transition-colors">
             Contact
-          </a>
-          <button className="rounded-full border border-zinc-700 px-6 py-2 hover:bg-white hover:text-black transition duration-300">
-            Login
+          </Link>
+        </div>
+
+        {/* Action Button */}
+        <div className="hidden md:block">
+          <button className="rounded-full border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-900 hover:bg-black hover:text-white hover:border-black transition-all duration-300">
+            Get the app
           </button>
         </div>
 
-        {/* Mobile Toggle Button - Visible only on small screens */}
+        {/* Mobile Toggle */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white p-2 focus:outline-none"
+            className="text-gray-900 p-2"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - Blends with the dark theme */}
+      {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="md:hidden bg-black border-b border-zinc-800 animate-in slide-in-from-top duration-300">
-          <div className="flex flex-col space-y-4 px-6 py-8 text-white font-medium">
-            <a
+        <div className="absolute top-full left-0 w-full mt-2 bg-white border border-gray-100 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+          <div className="flex flex-col space-y-4 px-8 py-8 text-gray-800 font-medium">
+            <Link
               href="#features"
               onClick={() => setIsOpen(false)}
-              className="text-lg hover:text-green-500"
+              className="text-lg"
             >
-              Features
-            </a>
-            <a
+              Overview
+            </Link>
+            <Link
               href="#pricing"
               onClick={() => setIsOpen(false)}
-              className="text-lg hover:text-green-500"
+              className="text-lg"
             >
-              Pricing
-            </a>
-            <a
+              Plans
+            </Link>
+            <Link
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="text-lg hover:text-green-500"
+              className="text-lg"
             >
               Contact
-            </a>
-            <hr className="border-zinc-800" />
-            <button className="w-full rounded-full bg-green-600 py-3 font-bold hover:bg-green-700 transition">
-              Login
+            </Link>
+            <hr className="border-gray-100" />
+            <button className="w-full rounded-full bg-black text-white py-4 font-bold">
+              Get the app
             </button>
           </div>
         </div>
